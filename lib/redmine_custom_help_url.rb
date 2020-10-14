@@ -12,7 +12,16 @@ module RedmineCustomHelpUrl
   module Redmine
     module Info
       class << self
-        def help_url; !Setting.plugin_redmine_custom_help_url['custom_help_url'].blank? ? Setting.plugin_redmine_custom_help_url['custom_help_url'] : 'http://www.redmine.org/guide' end
+        def help_url
+          begin
+            if Setting.plugin_redmine_custom_help_url['custom_help_url'].blank?
+              return 'http://www.redmine.org/guide'
+            end
+            return Setting.plugin_redmine_custom_help_url['custom_help_url']
+          rescue
+            return 'http://www.redmine.org/guide'
+          end
+        end
       end
     end
   end
