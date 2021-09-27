@@ -1,3 +1,7 @@
+0.0.3 (2021-09-27):
+    * Added custom projects URL
+    * Renamed project into Custom Menu URLs
+
 0.0.2 (2013-02-22):
     * Workaround requirement for a call to Setting.plugin_redmine_custom_help_url['custom_help_url'], via
       RedmineCustomHelpUrl::Redmine::Info, by moving the addition of new help top_menu item to after
