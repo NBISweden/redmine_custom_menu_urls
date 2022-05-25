@@ -14,6 +14,7 @@ Redmine::Plugin.register :redmine_custom_menu_urls do
 
   delete_menu_item :top_menu, :help
   delete_menu_item :top_menu, :projects
+  menu :top_menu, :urdr, 'https://urdr.nbis.se'
 end
 
 if Rails::VERSION::MAJOR >= 3
