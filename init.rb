@@ -13,7 +13,7 @@ Redmine::Plugin.register :redmine_custom_menu_urls do
            :partial => 'settings/redmine_custom_menu_urls_settings'
 
   delete_menu_item :top_menu, :help
-  delete_menu_item :top_menu, :projects
+  menu :top_menu, :urdr, 'https://urdr.nbis.se'
 end
 
 if Rails::VERSION::MAJOR >= 3
@@ -35,5 +35,4 @@ end
 # We now use overridden module RedmineCustomMenuUrl::Redmine::Info instead of directly calling 
 # Setting.plugin_redmine_custom_menu_urls['custom_help_url']
 
-Redmine::Plugin.find('redmine_custom_menu_urls').menu :top_menu, :projects, RedmineCustomMenuUrls::Redmine::Info.projects_url, :last => false
 Redmine::Plugin.find('redmine_custom_menu_urls').menu :top_menu, :help, RedmineCustomMenuUrls::Redmine::Info.help_url, :last => true
